@@ -1,0 +1,69 @@
+{
+    "name": "jeffersongoncalves/laravel-settings-discord-logger",
+    "description": "Manage laravel-discord-logger from the database with spatie/laravel-settings: webhook URL, level, mentions, deduplication, rate limits and more, injected at runtime instead of read from .env.",
+    "keywords": [
+        "jeffersongoncalves",
+        "laravel",
+        "laravel-settings-discord-logger",
+        "laravel-discord-logger",
+        "discord",
+        "logging",
+        "settings",
+        "spatie-laravel-settings"
+    ],
+    "homepage": "https://github.com/jeffersongoncalves/laravel-settings-discord-logger",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2|^8.3|^8.4",
+        "jeffersongoncalves/laravel-discord-logger": "^2.2",
+        "laravel/framework": "^12.61.1|^13.12.0",
+        "spatie/laravel-package-tools": "^1.14.0",
+        "spatie/laravel-settings": "^3.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.24",
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^3.7.4|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JeffersonGoncalves\\SettingsDiscordLogger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JeffersonGoncalves\\SettingsDiscordLogger\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JeffersonGoncalves\\SettingsDiscordLogger\\SettingsDiscordLoggerServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
